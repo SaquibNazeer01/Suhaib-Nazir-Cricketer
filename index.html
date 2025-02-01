@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suhaib Nazir</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #1a1a2e, #16213e);
+            color: white;
+            text-align: center;
+        }
+
+        header,
+        footer {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        nav a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Colorful menu buttons */
+        .menu-item:nth-child(1) {
+            color: #ff6347;
+        }
+
+        .menu-item:nth-child(2) {
+            color: #32cd32;
+        }
+
+        .menu-item:nth-child(3) {
+            color: #1e90ff;
+        }
+
+        .menu-item:nth-child(4) {
+            color: #ff69b4;
+        }
+
+        .menu-item.active {
+            font-weight: bold;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 40px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #fff;
+        }
+
+        h2 {
+            color: #ffd700;
+            border-bottom: 3px solid #fff;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Profile photo background */
+        header {
+            background-image: url('https://scontent.fsxv4-1.fna.fbcdn.net/v/t39.30808-6/476229129_1831322457637838_5156340334007255880_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=saCQkV7euYwQ7kNvgEuhgoH&_nc_zt=23&_nc_ht=scontent.fsxv4-1.fna&_nc_gid=A65FzN8zND12OoVB1ojnOmE&oh=00_AYAXGdmzqQIYMVLSmLHGPYoPzFkiEsBRxdKCQwwhl8ywIQ&oe=67A4209D');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        #achievements {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-direction: column;
+            margin: 20px;
+        }
+
+        .achievement-box {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .achievement-box:hover {
+            transform: scale(1.1);
+        }
+
+        .achievement-box h3 {
+            margin: 0;
+            color: #ff6347;
+            font-size: 18px;
+        }
+
+        .achievement-box p {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        #gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin: 20px;
+        }
+
+        .gallery img {
+            width: 80%;
+            max-width: 600px;
+            height: 400px;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Developer Section */
+        #developer {
+            background-color: #333;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        #developer h2 {
+            color: #32cd32;
+            margin-bottom: 20px;
+        }
+
+        #developer p {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .developer-icons a {
+            margin: 10px;
+            font-size: 30px;
+            color: white;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .developer-icons a:hover {
+            transform: scale(1.3);
+        }
+
+        /* Suhaib Nazir Contact Section */
+        #suhaib-contact {
+            background-color: #333;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        #suhaib-contact h2 {
+            color: #ff6347;
+            margin-bottom: 20px;
+        }
+
+        .suhaib-icons a {
+            margin: 10px;
+            font-size: 30px;
+            color: white;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .suhaib-icons a:hover {
+            transform: scale(1.3);
+        }
+
+        /* About Section */
+        #about {
+            background-color: #444;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        #about h2 {
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            color: #fff;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav {
+                display: none; /* Hide the menu by default */
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+                margin-top: 20px;
+            }
+
+            nav a {
+                font-size: 20px;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                font-size: 30px;
+                z-index: 1000;
+            }
+
+            .side-menu {
+                position: fixed;
+                top: 0;
+                left: -250px;
+                width: 250px;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                transition: left 0.3s ease-in-out;
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+            }
+
+            .side-menu a {
+                color: white;
+                font-size: 18px;
+                text-decoration: none;
+                padding: 10px 0;
+                border-bottom: 1px solid #fff;
+            }
+
+            .side-menu a:hover {
+                background-color: #444;
+            }
+
+            .side-menu.show {
+                left: 0;
+            }
+
+            /* Center menu below header */
+            .top-menu {
+                display: none;
+            }
+        }
+
+        .social-icons a {
+            margin: 10px;
+            font-size: 24px;
+            color: white;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        footer .contact-icons a {
+            margin: 10px;
+            font-size: 30px;
+            color: white;
+            transition: transform 0.3s;
+        }
+
+        footer .contact-icons a:hover {
+            transform: scale(1.3);
+        }
+
+        .contact-icons {
+            margin: 10px;
+        }
+
+        #achievements h2 {
+            color: #ff6347;
+        }
+
+        #gallery h2 {
+            color: #32cd32;
+        }
+
+        #about h2 {
+            color: #1e90ff;
+        }
+
+        #contact h2 {
+            color: #ff69b4;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Suhaib Nazir</h1>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <nav class="top-menu">
+            <a href="#achievements" class="menu-item">Achievements</a>
+            <a href="#gallery" class="menu-item">Gallery</a>
+            <a href="#about" class="menu-item">About</a>
+            <a href="#contact" class="menu-item">Contact</a>
+            <a href="#developer" class="menu-item">Developer</a>
+        </nav>
+    </header>
+
+    <!-- Side Menu -->
+    <div id="side-menu" class="side-menu">
+        <a href="#achievements" class="menu-item">Achievements</a>
+        <a href="#gallery" class="menu-item">Gallery</a>
+        <a href="#about" class="menu-item">About</a>
+        <a href="#contact" class="menu-item">Contact</a>
+        <a href="#developer" class="menu-item">Developer</a>
+    </div>
+
+    <section id="about">
+        <h2>About</h2>
+        <p>Suhaib Nazir is an experienced professional with expertise in various fields. His passion for learning and his dedication to excellence have shaped his career. This website showcases his achievements, gallery, and contact details.</p>
+    </section>
+
+    <section id="achievements">
+        <h2>Achievements</h2>
+        <div class="achievement-box">
+            <h3>Man of the Match</h3>
+            <p>12</p>
+        </div>
+        <div class="achievement-box">
+            <h3>Man of the Series</h3>
+            <p>3</p>
+        </div>
+        <div class="achievement-box">
+            <h3>Centuries</h3>
+            <p>2</p>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <div><img src="https://scontent.fsxv4-1.fna.fbcdn.net/v/t39.30808-6/460818547_533786499022791_8796581829868835188_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=3Gi3mfv0groQ7kNvgGxpeJk&_nc_zt=23&_nc_ht=scontent.fsxv4-1.fna&_nc_gid=AFViypRbQUa8gU0FtvDZWVe&oh=00_AYALV1S5SjJe8OGeYuI4cuauwtchV6skqz2tQGp1lSnXVg&oe=67A43DBC" alt="RPL FINAL"></div>
+            <div><img src="https://scontent.fixm4-2.fna.fbcdn.net/v/t39.30808-6/466640706_570271342040973_2348399235782998107_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=WkOCADeRhDgQ7kNvgEzaNJv&_nc_zt=23&_nc_ht=scontent.fixm4-2.fna&_nc_gid=AfB_GKjEofjCGhryOiHLCg5&oh=00_AYBTiOltCWQ3J4WEk_Y5wXuj8r3WJMoRbUfwts92DaT5lg&oe=67A42E58" alt="READY FOR THE SHOW!!!!"></div>
+            <div><img src="https://scontent.fsxv4-1.fna.fbcdn.net/v/t39.30808-6/453187134_500746565660118_6924892352460943270_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=jEl1lyBRf1EQ7kNvgFYW5Zs&_nc_zt=23&_nc_ht=scontent.fsxv4-1.fna&_nc_gid=AA6bd3wOqvdCQxud9Dnc6-6&oh=00_AYA07sZWHOX5RBbnd3LLGE9n1qQhTO2owQ0jjpsPPHylCQ&oe=67A40FFD" alt="PSL FINALS"></div>
+            <div><img src="https://scontent.fsxv4-1.fna.fbcdn.net/v/t39.30808-6/473276511_611840424550731_3970679981122975027_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=TiriHrqsSG8Q7kNvgH0U3Nf&_nc_zt=23&_nc_ht=scontent.fsxv4-1.fna&_nc_gid=AwGSl67RUgpmlpBo67dw7ha&oh=00_AYCIedTUfF9GhSfNuEYQm-NCa8Yz-WQd29O1jGoCGKo6gQ&oe=67A44144" alt="TEAM DRAGON RIDERS"></div>
+        </div>
+    </section>
+
+    <!-- Suhaib Nazir Contact Section -->
+    <section id="suhaib-contact">
+        <h2>Contact Details</h2>
+        <div class="suhaib-icons">
+            <a href="https://www.instagram.com/suhaib.tiger/" target="_blank"><img src="https://img.icons8.com/ios/50/ffffff/instagram-new.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com/profile.php?id=100071743375543&sk=about" target="_blank"><img src="https://img.icons8.com/ios/50/ffffff/facebook.png" alt="Facebook"></a>
+            <a href="tel:+919797952258"><img src="https://img.icons8.com/ios/50/ffffff/phone.png" alt="Phone"></a>
+        </div>
+    </section>
+
+    <!-- Developer Section -->
+    <section id="developer">
+        <h2>Developer</h2>
+        <p> Saquib Nazeer</p>
+        <p>Contact Details:</p>
+        <div class="developer-icons">
+            <a href="https://www.instagram.com/Bhat_Saakib019/" target="_blank"><img src="https://img.icons8.com/ios/50/ffffff/instagram-new.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com/bhatsaakib019" target="_blank"><img src="https://img.icons8.com/ios/50/ffffff/facebook.png" alt="Facebook"></a>
+            <a href="mailto:domainastrill@gmail.com"><img src="https://img.icons8.com/ios/50/ffffff/mail.png" alt="Email"></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Developed by <mark> Saquib Nazeer </mark>| All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const sideMenu = document.getElementById('side-menu');
+        function toggleMenu() {
+            sideMenu.classList.toggle('show');
+        }
+
+        // Highlight active menu item
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                menuItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
