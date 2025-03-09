@@ -228,14 +228,12 @@
             line-height: 1.6;
         }
 
-        @media screen and (max-width: 768px) {
-            nav {
-                display: none; /* Hide the menu by default */
-                flex-direction: column;
-                gap: 10px;
-                align-items: center;
-                margin-top: 20px;
-            }
+       @media screen and (max-width: 768px) {
+    header {
+        background-size: contain; /* Fits image fully */
+        height: 50vh; /* Adjust height for smaller screens */
+    }
+}
 
             nav a {
                 font-size: 20px;
