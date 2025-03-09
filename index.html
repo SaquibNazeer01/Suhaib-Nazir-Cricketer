@@ -76,13 +76,17 @@
         }
 
         /* Profile photo background */
-        header {
-            background-image: url('images/readyy.jpg');
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 0;
-        }
+       header {
+    background-image: url('images/profile.jpg');
+    background-position: center;
+    background-size: cover;  /* Ensures the image covers the whole area */
+    background-repeat: no-repeat; /* Prevents tiling */
+    height: 100vh; /* Makes header take full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
         header h1 {
             font-size: 3rem;
